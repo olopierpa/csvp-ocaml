@@ -78,13 +78,13 @@ val make_csv_reader_status_from_channel : csv_parameters -> in_channel -> csv_re
 val make_csv_reader_status_from_filename : csv_parameters -> string -> csv_reader_status;;
   
 (* Field oriented *)  
-val read_field : csv_reader_status -> field option;;   (* None => record at end && reader
+val read_field : csv_reader_status -> field option;;   (* None ⇒ record at end ∧ reader
                                                           has advanced to next record. *)
   
 val input_at_end : csv_reader_status -> bool;;
   
 (* Record oriented *)
-val read_record : csv_reader_status -> record option;; (* None => input at end && next calls  
+val read_record : csv_reader_status -> record option;; (* None ⇒ input at end ∧ next calls  
                                                           will continue to return None. *)
   
 (* If a reader_status is read to the end, its associated channel is closed 
