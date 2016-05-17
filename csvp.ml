@@ -348,7 +348,7 @@ let read_field reader_status =
            set_record_default common field;
            Some field
       in if reader_status.input_at_end then begin
-             finished_with_this_csv_reader reader_status
+             finished_with_this_csv_reader reader_status;
            end else begin
              common.current_field_number <- succ common.current_field_number;
            end;
